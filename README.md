@@ -1,13 +1,26 @@
-# GaINeR: Geometry-Aware Implicit Neural Representation for Image Editing
+
+
+<div align="center">
+<h1>GaINeR: Geometry-Aware Implicit Neural Representation for Image Editing</h1>
+Weronika Jakubowska, Mikołaj Zieliński, Rafał Tobiasz, Krzysztof Byrski, Maciej Zięba, Dominik Belter, Przemysław Spurek
+<br> <br>
+  
+[![Project Page](https://img.shields.io/badge/Project_Page-Visit-green)](https://wjakubowska.github.io/GaINeR/)
+
+</div>
+
 <p align="center">
   <img src="images/teaser.png"  width="1024">
 </p>
 
-Hi there! 
+**Hi there!**
 
-This repository contains the official implementation assosciated with the paper GaINeR: Geometry-Aware Implicit Neural Representation for Image Editing
+This repository contains the official implementation assosciated with the paper GaINeR: Geometry-Aware Implicit Neural Representation for Image Editing.
 
-Abstract: Implicit Neural Representations (INRs) have become an essential tool for modeling continuous 2D images, enabling high-fidelity
+**Project Page:** https://wjakubowska.github.io/GaINeR/
+
+
+**Abstract:** Implicit Neural Representations (INRs) have become an essential tool for modeling continuous 2D images, enabling high-fidelity
 reconstruction, super-resolution, and compression. Popular architectures such as SIREN, WIRE, and FINER demonstrate the potential
 of INR for capturing fine-grained image details. However, traditional INRs often lack explicit geometric structure and have limited
 capabilities for local editing or integration with physical simulation, restricting their applicability in dynamic or interactive settings.
