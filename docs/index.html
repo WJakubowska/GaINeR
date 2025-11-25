@@ -1,173 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>GaINeR: Geometry-Aware Implicit Network Representation</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>GaINeR: Geometry-Aware Implicit Network Representation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: #111;
+            line-height: 1.6;
+        }
 
-
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    color: #111;
-    line-height: 1.6;
-}
-
-.content {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 30px;
-}
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+        }
 
 
-.full-width-header {
-    width: 100%;
-    background: #f4f4f4;
-    padding: 40px 0 30px 0;
-    box-shadow: 0px 3px 14px rgba(0,0,0,0.06);
-}
+        .full-width-header {
+            width: 100%;
+            background: #f4f4f4;
+            padding: 40px 0 30px 0;
+            box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.06);
+        }
 
-.header-inner {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+        .header-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
 
-h1 {
-    font-size: 40px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 15px;
-}
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 15px;
+        }
 
-h2 {
-    font-size: 28px;
-    margin-top: 40px;
-    font-weight: 600;
-}
+        h2 {
+            font-size: 28px;
+            margin-top: 40px;
+            font-weight: 600;
+        }
 
 
 
-.authors {
-    text-align: center;
-    font-size: 18px;
-}
+        .authors {
+            text-align: center;
+            font-size: 18px;
+        }
 
-.affils {
-    text-align: center;
-    font-size: 15px;
-    color: #555;
-}
+        .affils {
+            text-align: center;
+            font-size: 15px;
+            color: #555;
+        }
 
-.equal {
-    text-align: center;
-    font-size: 14px;
-    color: #777;
-    margin-top: 5px;
-}
-
-
-
-.center {
-    text-align: center;
-}
-
-.btn-modern {
-    display: inline-block;
-    padding: 12px 26px;
-    margin: 10px;
-    font-size: 17px;
-    font-weight: 500;
-    color: #111;
-    background: rgba(255,255,255,0.85);
-    border-radius: 14px;
-    text-decoration: none;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
-    transition: all 0.25s ease;
-}
-
-.btn-modern:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 26px rgba(0,0,0,0.16);
-    background: white;
-}
+        .equal {
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+            margin-top: 5px;
+        }
 
 
-.teaser img {
-    width: 90%;
-    border-radius: 12px;
-    display: block;
-    margin: 20px auto;
-}
+
+        .center {
+            text-align: center;
+        }
+
+        .btn-modern {
+            display: inline-block;
+            padding: 12px 26px;
+            margin: 10px;
+            font-size: 17px;
+            font-weight: 500;
+            color: #111;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 14px;
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
+            transition: all 0.25s ease;
+        }
+
+        .btn-modern:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 26px rgba(0, 0, 0, 0.16);
+            background: white;
+        }
 
 
-video {
-    border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-}
+        .teaser img {
+            width: 90%;
+            border-radius: 12px;
+            display: block;
+            margin: 20px auto;
+        }
 
 
-.abstract {
-    text-align: justify;
-    font-size: 17px;
-    line-height: 1.7;
-    margin-top: 15px;
-}
+        video {
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
 
-.manual-edit-container {
-    text-align: center;
-    margin-top: 40px;
-}
 
-.edit-pair {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 20px;
-}
+        .abstract {
+            text-align: justify;
+            font-size: 17px;
+            line-height: 1.7;
+            margin-top: 15px;
+        }
 
-.edit-pair img {
-    height: 420px;          
-    width: auto;            
-    object-fit: contain;    
-    background: #f7f7f7;    
-    border-radius: 10px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-}
+        .manual-edit-container {
+            text-align: center;
+            margin-top: 40px;
+        }
 
-.thumbnail-bar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 20px;
-}
+        .edit-pair {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
 
-.thumbnail-bar img {
-    width: 110px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-    transition: transform .2s, box-shadow .2s;
-}
+        .edit-pair img {
+            height: 420px;
+            width: auto;
+            object-fit: contain;
+            background: #f7f7f7;
+            border-radius: 10px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+        }
 
-.thumbnail-bar img:hover {
-    transform: scale(1.06);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
+        .thumbnail-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
 
-.thumbnail-bar img.active-thumb {
-    outline: 3px solid #4aa3ff;
-    transform: scale(1.05);
-}
+        .thumbnail-bar img {
+            width: 110px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+            transition: transform .2s, box-shadow .2s;
+        }
 
-</style>
+        .thumbnail-bar img:hover {
+            transform: scale(1.06);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .thumbnail-bar img.active-thumb {
+            outline: 3px solid #4aa3ff;
+            transform: scale(1.05);
+        }
+
+        .multi-carousel {
+            position: relative;
+            max-width: 1000px;
+            margin: 40px auto;
+            overflow: hidden;
+        }
+
+        .multi-track {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.4s ease;
+        }
+
+        .multi-slide {
+            min-width: calc(33.33% - 14px);
+        }
+
+        .multi-slide video {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            height: 260px;
+            object-fit: contain;
+        }
+
+        
+        .multi-btn {
+            position: absolute;
+            top: 50%;
+            z-index: 2;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.9);
+            border: none;
+            padding: 8px 14px;
+            font-size: 22px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .multi-btn:hover {
+            background: white;
+        }
+
+        #multiPrev {
+            left: 10px;
+        }
+        #multiNext {
+            right: 10px;
+        }
+
+        
+        .multi-dots {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .multi-dots span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #ccc;
+            border-radius: 50%;
+            margin: 4px;
+            cursor: pointer;
+        }
+
+        .multi-dots .active {
+            background: #444;
+        }
+    </style>
 
 
 </head>
@@ -176,128 +244,245 @@ video {
 <body>
 
 
-<div class="full-width-header">
-    <div class="header-inner">
+    <div class="full-width-header">
+        <div class="header-inner">
 
-        <h1>GaINeR: Geometry-Aware Implicit Network Representation</h1>
+            <h1>GaINeR: Geometry-Aware Implicit Network Representation</h1>
 
-        <div class="authors">
-            Weronika Jakubowska<sup>*1</sup> &nbsp;
-            Mikołaj Zieliński<sup>*2</sup> &nbsp;
-            Rafał Tobiasz<sup>*3,4</sup> &nbsp;
-            Krzysztof Byrski<sup>4</sup><br>
-            Maciej Zięba<sup>1</sup> &nbsp;
-            Dominik Belter<sup>2</sup> &nbsp;
-            Przemysław Spurek<sup>3,4</sup>
+            <div class="authors">
+                Weronika Jakubowska<sup>*1</sup> &nbsp;
+                Mikołaj Zieliński<sup>*2</sup> &nbsp;
+                Rafał Tobiasz<sup>*3,4</sup> &nbsp;
+                Krzysztof Byrski<sup>4</sup><br>
+                Maciej Zięba<sup>1</sup> &nbsp;
+                Dominik Belter<sup>2</sup> &nbsp;
+                Przemysław Spurek<sup>3,4</sup>
+            </div>
+
+            <div class="affils">
+                <sup>1</sup>Wrocław University of Science and Technology &nbsp;•&nbsp;
+                <sup>2</sup>Poznań University of Technology &nbsp;•&nbsp;
+                <sup>3</sup>IDEAS Research Institute &nbsp;•&nbsp;
+                <sup>4</sup>Jagiellonian University
+            </div>
+
+            <div class="equal">
+                <sup>*</sup>Equal contribution
+            </div>
+
+            <div class="center" style="margin-top: 25px;">
+                <a class="btn-modern" href="TO_FILL" target="_blank">arXiv</a>
+                <a class="btn-modern" href="https://github.com/WJakubowska/GaINeR" target="_blank">Code</a>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="content">
+
+
+        <div class="teaser">
+            <img src="../images/teaser.png">
         </div>
 
-        <div class="affils">
-            <sup>1</sup>Wrocław University of Science and Technology &nbsp;•&nbsp;
-            <sup>2</sup>Poznań University of Technology &nbsp;•&nbsp;
-            <sup>3</sup>IDEAS Research Institute &nbsp;•&nbsp;
-            <sup>4</sup>Jagiellonian University
+        <h2>Abstract</h2>
+        <div class="abstract">
+            Implicit Neural Representations (INRs) have become an essential tool for modeling continuous 2D images,
+            enabling high-fidelity reconstruction, super-resolution, and compression. Popular architectures such as
+            SIREN, WIRE,
+            and FINER demonstrate the potential of INR for capturing fine-grained image details. However, traditional
+            INRs often
+            lack explicit geometric structure and have limited capabilities for local editing or integration with
+            physical simulation,
+            restricting their applicability in dynamic or interactive settings. To address these limitations, we propose
+            GaINeR:
+            Geometry-Aware Implicit Network Representation, a novel framework for 2D images that combines trainable
+            Gaussian
+            distributions with a neural network-based INR. For a given image coordinate, the model retrieves the K
+            nearest
+            Gaussians, aggregates distance-weighted embeddings, and predicts the RGB value via a neural network. This
+            design
+            enables continuous image representation, interpretable geometric structure, and flexible local editing,
+            providing a
+            foundation for physically aware and interactive image manipulation.
         </div>
 
-        <div class="equal">
-            <sup>*</sup>Equal contribution
+
+        <h2>Video</h2>
+        <div class="center">
+            <video width="100%" controls>
+                <source src="/assets/GaINeR.mp4" type="video/mp4">
+            </video>
         </div>
 
-        <div class="center" style="margin-top: 25px;">
-            <a class="btn-modern" href="TO_FILL" target="_blank">arXiv</a>
-            <a class="btn-modern" href="https://github.com/WJakubowska/GaINeR" target="_blank">Code</a>
+
+        <h2>Results</h2>
+
+        <div class="manual-edit-container">
+
+            <div class="edit-pair">
+                <img id="before-image" src="../images/edit_images/edit1_before.png">
+                <img id="after-image" src="../images/edit_images/edit1_after.png">
+            </div>
+            <div class="thumbnail-bar" id="thumb-bar"></div>
+
+            <p class="abstract">
+                GaINeR enables intuitive and flexible image manipulation.
+                Manual edits become simple and precise: adjusting the learned Gaussian field directly reshapes the
+                image, producing smooth, artifact-free deformations that naturally preserve structure and appearance.
+                The same formulation seamlessly supports physics-based effects — forces, collisions, or fluid-like
+                motion
+                gently modify the Gaussian geometry, yielding stable, coherent dynamics without tearing or retraining.
+                Together, these capabilities allow GaINeR to handle both local edits and complex physics-driven
+                transformations
+                while maintaining high visual fidelity.
+            </p>
+
+<div class="multi-carousel">
+    <button id="multiPrev" class="multi-btn">◀</button>
+
+    <div class="multi-track">
+
+        <div class="multi-slide">
+            <video muted loop autoplay playsinline>
+                <source src="../images/videos/caterpillar.mp4" type="video/mp4">
+            </video>
         </div>
+
+        <div class="multi-slide">
+            <video muted loop autoplay playsinline>
+                <source src="../images/videos/gainer_water_drop.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="multi-slide">
+            <video muted loop autoplay playsinline>
+                <source src="../images/videos/apple_bounce.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="multi-slide">
+            <video muted loop autoplay playsinline>
+                <source src="../images/videos/bouquet.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="multi-slide">
+            <video muted loop autoplay playsinline>
+                <source src="../images/videos/matador.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="multi-slide">
+            <video muted loop autoplay playsinline>
+                <source src="../images/videos/jelly.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="multi-slide">
+            <video muted loop autoplay playsinline>
+                <source src="../images/videos/apple_sand.mp4" type="video/mp4">
+            </video>
+        </div>
+
+
 
     </div>
+
+    <button id="multiNext" class="multi-btn">▶</button>
 </div>
 
+<div class="multi-dots" id="multiDots"></div>
 
 
 
-<div class="content">
 
 
-<div class="teaser">
-    <img src="/images/teaser.png">
-</div>
-
-<h2>Abstract</h2>
-<div class="abstract">
-Implicit Neural Representations (INRs) have become an essential tool for modeling continuous 2D images, 
-enabling high-fidelity reconstruction, super-resolution, and compression. Popular architectures such as SIREN, WIRE, 
-and FINER demonstrate the potential of INR for capturing fine-grained image details. However, traditional INRs often 
-lack explicit geometric structure and have limited capabilities for local editing or integration with physical simulation,
-restricting their applicability in dynamic or interactive settings. To address these limitations, we propose GaINeR: 
-Geometry-Aware Implicit Network Representation, a novel framework for 2D images that combines trainable Gaussian 
-distributions with a neural network-based INR. For a given image coordinate, the model retrieves the K nearest 
-Gaussians, aggregates distance-weighted embeddings, and predicts the RGB value via a neural network. This design 
-enables continuous image representation, interpretable geometric structure, and flexible local editing, providing a 
-foundation for physically aware and interactive image manipulation.
-</div>
+        </div>
 
 
-<h2>Video</h2>
-<div class="center">
-    <video width="100%" controls>
-        <source src="/assets/GaINeR.mp4" type="video/mp4">
-    </video>
-</div>
 
-
-<h2>Results</h2>
-
-<div class="manual-edit-container">
-
-    <div class="edit-pair">
-        <img id="before-image" src="/images/edit_images/edit1_before.png">
-        <img id="after-image"  src="/images/edit_images/edit1_after.png">
     </div>
-    <div class="thumbnail-bar" id="thumb-bar"></div>
-
-</div>
-
-<h2>BibTeX</h2>
-<pre>
-@article{jakubowska2025gainer,
-  title={GaINeR: Geometry-Aware Implicit Network Representation},
-  author={Jakubowska, Weronika and Zieliński, Mikołaj and Tobiasz, Rafał 
-          and Byrski, Krzysztof and Zięba, Maciej and Belter, Dominik 
-          and Spurek, Przemysław},
-  journal={ArXiv},
-  year={2025}
-}
-</pre>
-
-</div>
 
 </body>
+
 </html>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
 
-    const N = 25; 
+        const N = 25;
 
-    let container = document.getElementById("thumb-bar");
+        let container = document.getElementById("thumb-bar");
 
-    for (let i = 1; i <= N; i++) {
-        if (i != 13) {
-        let img = document.createElement("img");
-        img.className = "thumb";
-        if (i === 1) img.classList.add("active-thumb");
-        img.dataset.pair = i;
-        img.src = `/images/edit_images/thumbs/edit${i}.png`;
-        container.appendChild(img);
-    }}
+        for (let i = 1; i <= N; i++) {
+            if (i != 13) {
+                let img = document.createElement("img");
+                img.className = "thumb";
+                if (i === 1) img.classList.add("active-thumb");
+                img.dataset.pair = i;
+                img.src = `../images/edit_images/thumbs/edit${i}.png`;
+                container.appendChild(img);
+            }
+        }
 
-    document.querySelectorAll(".thumb").forEach(thumb => {
-        thumb.addEventListener("click", () => {
-            document.querySelectorAll(".thumb").forEach(t => t.classList.remove("active-thumb"));
-            thumb.classList.add("active-thumb");
+        document.querySelectorAll(".thumb").forEach(thumb => {
+            thumb.addEventListener("click", () => {
+                document.querySelectorAll(".thumb").forEach(t => t.classList.remove("active-thumb"));
+                thumb.classList.add("active-thumb");
 
-            let id = thumb.dataset.pair;
-            document.getElementById("before-image").src = `/images/edit_images/edit${id}_before.png`;
-            document.getElementById("after-image").src  = `/images/edit_images/edit${id}_after.png`;
+                let id = thumb.dataset.pair;
+                document.getElementById("before-image").src = `../images/edit_images/edit${id}_before.png`;
+                document.getElementById("after-image").src = `../images/edit_images/edit${id}_after.png`;
+            });
         });
     });
+
+ const track2 = document.querySelector('.multi-track');
+const slides2 = document.querySelectorAll('.multi-slide');
+const prev2 = document.getElementById('multiPrev');
+const next2 = document.getElementById('multiNext');
+const dots2 = document.getElementById('multiDots');
+
+const itemsPerView = 3;
+const totalSlides = slides2.length;
+const totalPages = Math.ceil(totalSlides / itemsPerView);
+
+let page = 0;
+
+
+for (let i = 0; i < totalPages; i++) {
+    const dot = document.createElement("span");
+    if (i === 0) dot.classList.add("active");
+    dot.dataset.index = i;
+    dots2.appendChild(dot);
+}
+
+function updateCarousel2() {
+    track2.style.transform = `translateX(-${page * 100}%)`;
+
+    dots2.querySelectorAll("span").forEach(d => d.classList.remove("active"));
+    dots2.querySelector(`span[data-index="${page}"]`).classList.add("active");
+}
+
+next2.onclick = () => {
+    page = (page + 1) % totalPages;
+    updateCarousel2();
+};
+
+prev2.onclick = () => {
+    page = (page - 1 + totalPages) % totalPages;
+    updateCarousel2();
+};
+
+
+dots2.querySelectorAll("span").forEach(dot => {
+    dot.onclick = () => {
+        page = parseInt(dot.dataset.index);
+        updateCarousel2();
+    };
 });
 </script>
