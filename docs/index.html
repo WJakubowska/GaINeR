@@ -217,7 +217,7 @@ video {
 
 
 <div class="teaser">
-    <img src="../images/teaser.png">
+    <img src="/images/teaser.png">
 </div>
 
 <h2>Abstract</h2>
@@ -238,7 +238,7 @@ foundation for physically aware and interactive image manipulation.
 <h2>Video</h2>
 <div class="center">
     <video width="100%" controls>
-        <source src="../assets/GaINeR.mp4" type="video/mp4">
+        <source src="/assets/GaINeR.mp4" type="video/mp4">
     </video>
 </div>
 
@@ -248,8 +248,8 @@ foundation for physically aware and interactive image manipulation.
 <div class="manual-edit-container">
 
     <div class="edit-pair">
-        <img id="before-image" src="../images/edit_images/edit1_before.png">
-        <img id="after-image"  src="../images/edit_images/edit1_after.png">
+        <img id="before-image" src="/images/edit_images/edit1_before.png">
+        <img id="after-image"  src="/images/edit_images/edit1_after.png">
     </div>
     <div class="thumbnail-bar" id="thumb-bar"></div>
 
@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", function () {
         img.className = "thumb";
         if (i === 1) img.classList.add("active-thumb");
         img.dataset.pair = i;
-        img.src = `../images/edit_images/thumbs/edit${i}.png`;
+        img.src = `/images/edit_images/thumbs/edit${i}.png`;
         container.appendChild(img);
     }}
 
@@ -295,8 +295,8 @@ document.addEventListener("DOMContentLoaded", function () {
             thumb.classList.add("active-thumb");
 
             let id = thumb.dataset.pair;
-            document.getElementById("before-image").src = `../images/edit_images/edit${id}_before.png`;
-            document.getElementById("after-image").src  = `../images/edit_images/edit${id}_after.png`;
+            document.getElementById("before-image").src = `/images/edit_images/edit${id}_before.png`;
+            document.getElementById("after-image").src  = `/images/edit_images/edit${id}_after.png`;
         });
     });
 });
