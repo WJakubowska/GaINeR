@@ -1,0 +1,22 @@
+# General
+data
+*.egg-info/
+outputs/
+renders/
+*.pyc
+__pycache__/
+exports/
+blender/
+edits/
+build/
+.env
+*.yml
+*.ipynb
+
+# OptiX SDK
+NVIDIA-OptiX-SDK-*
+*.pyc
+# CUDA
+*.o
+*.cu.ptx
+*.so
