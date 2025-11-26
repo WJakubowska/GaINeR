@@ -271,7 +271,7 @@
             </div>
 
             <div class="center" style="margin-top: 25px;">
-                <a class="btn-modern" href="TO_FILL" target="_blank">arXiv</a>
+                <a class="btn-modern" href="" target="_blank">arXiv</a>
                 <a class="btn-modern" href="https://github.com/WJakubowska/GaINeR" target="_blank">Code</a>
             </div>
 
@@ -314,7 +314,7 @@
         <h2>Video</h2>
         <div class="center">
             <video width="100%" controls>
-                <source src="/assets/GaINeR.mp4" type="video/mp4">
+                <source src="images/GaINeR.mp4" type="video/mp4">
             </video>
         </div>
 
@@ -435,8 +435,8 @@
                 thumb.classList.add("active-thumb");
 
                 let id = thumb.dataset.pair;
-                document.getElementById("before-image").src = `/images/edit_images/edit${id}_before.png`;
-                document.getElementById("after-image").src = `/images/edit_images/edit${id}_after.png`;
+                document.getElementById("before-image").src = `GaINeR/images/edit_images/edit${id}_before.png`;
+                document.getElementById("after-image").src = `GaINeR/images/edit_images/edit${id}_after.png`;
             });
         });
     });
