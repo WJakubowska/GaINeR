@@ -260,9 +260,9 @@
             </div>
 
             <div class="affils">
-                <sup>1</sup>Wrocław University of Science and Technology &nbsp;•&nbsp;
-                <sup>2</sup>Poznań University of Technology &nbsp;•&nbsp;
-                <sup>3</sup>IDEAS Research Institute &nbsp;•&nbsp;
+                <sup>1</sup>Wrocław University of Science and Technology &nbsp; &nbsp;
+                <sup>2</sup>Poznań University of Technology &nbsp; &nbsp;
+                <sup>3</sup>IDEAS Research Institute &nbsp; &nbsp;
                 <sup>4</sup>Jagiellonian University
             </div>
 
@@ -424,7 +424,7 @@
                 img.className = "thumb";
                 if (i === 1) img.classList.add("active-thumb");
                 img.dataset.pair = i;
-                img.src = `../images/edit_images/thumbs/edit${i}.png`;
+                img.src = `/images/edit_images/thumbs/edit${i}.png`;
                 container.appendChild(img);
             }
         }
@@ -435,8 +435,8 @@
                 thumb.classList.add("active-thumb");
 
                 let id = thumb.dataset.pair;
-                document.getElementById("before-image").src = `GaINeR/images/edit_images/edit${id}_before.png`;
-                document.getElementById("after-image").src = `GaINeR/images/edit_images/edit${id}_after.png`;
+                document.getElementById("before-image").src = `images/edit_images/edit${id}_before.png`;
+                document.getElementById("after-image").src = `images/edit_images/edit${id}_after.png`;
             });
         });
     });
