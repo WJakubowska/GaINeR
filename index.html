@@ -285,7 +285,7 @@
 
 
         <div class="teaser">
-            <img src="GaINeR/images/teaser.png">
+            <img src="images/teaser.png">
         </div>
 
         <h2>Abstract</h2>
@@ -348,7 +348,7 @@
 
         <div class="multi-slide">
             <video muted loop autoplay playsinline>
-                <source src="/images/videos/caterpillar.mp4" type="video/mp4">
+                <source src="images/videos/caterpillar.mp4" type="video/mp4">
             </video>
         </div>
 
@@ -435,8 +435,8 @@
                 thumb.classList.add("active-thumb");
 
                 let id = thumb.dataset.pair;
-                document.getElementById("before-image").src = `images/edit_images/edit${id}_before.png`;
-                document.getElementById("after-image").src = `images/edit_images/edit${id}_after.png`;
+                document.getElementById("before-image").src = `/images/edit_images/edit${id}_before.png`;
+                document.getElementById("after-image").src = `/images/edit_images/edit${id}_after.png`;
             });
         });
     });
