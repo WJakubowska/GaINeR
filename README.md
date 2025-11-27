@@ -6,7 +6,7 @@ Weronika Jakubowska, Mikołaj Zieliński, Rafał Tobiasz, Krzysztof Byrski, Maci
 <br> <br>
   
 [![Project Page](https://img.shields.io/badge/Project_Page-Visit-green)](https://wjakubowska.github.io/GaINeR/)
-
+[![arXiv](https://img.shields.io/badge/arXiv-2411.18311-red)](https://arxiv.org/pdf/2511.20924)
 </div>
 
 <p align="center">
