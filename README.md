@@ -10,7 +10,7 @@ Weronika Jakubowska, Mikołaj Zieliński, Rafał Tobiasz, Krzysztof Byrski, Maci
 </div>
 
 <p align="center">
-  <img src="images/teaser.png"  width="1024">
+  <img src="images/Teaser.jpg"  width="1024">
 </p>
 
 **Hi there!**
