@@ -7,31 +7,96 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --bg0: #ffffff;
+            --bg1: #f6f7f9;
+            --panel: rgba(255, 255, 255, 0.90);
+            --text: #0f172a;
+            --muted: rgba(15, 23, 42, 0.72);
+            --border: rgba(15, 23, 42, 0.10);
+            --shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+            --accent: #334155;
+            --accent2: #0f172a;
+        }
+
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
-            color: #111;
+            color: var(--text);
             line-height: 1.6;
+            background: linear-gradient(180deg, var(--bg0) 0%, var(--bg1) 100%);
+        }
+
+        .band {
+            width: 100%;
+            padding: 24px 0;
+        }
+
+        .band:last-child {
+            padding-bottom: 34px;
+        }
+
+        .band--alt {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.06) 0%, rgba(51, 65, 85, 0.03) 100%);
+        }
+
+        .band+.band {
+            border-top: 1px solid rgba(15, 23, 42, 0.06);
         }
 
         .content {
-            max-width: 1000px;
+            width: 80%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 30px;
+            padding: 48px clamp(16px, 4vw, 60px);
+            box-sizing: border-box;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
         }
 
 
         .full-width-header {
             width: 100%;
-            background: #f4f4f4;
+            background:
+                radial-gradient(900px circle at 18% 12%, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0) 60%),
+                linear-gradient(135deg, #0b1220 0%, #0f172a 40%, #334155 100%);
             padding: 40px 0 30px 0;
-            box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.06);
+            box-shadow: 0px 6px 22px rgba(0, 0, 0, 0.10);
+            border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+        }
+
+        .full-width-header h1,
+        .full-width-header .authors,
+        .full-width-header .affils,
+        .full-width-header .equal {
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        .full-width-header .affils,
+        .full-width-header .equal {
+            color: rgba(255, 255, 255, 0.74);
+        }
+
+        .full-width-header .btn-modern {
+            color: rgba(255, 255, 255, 0.94);
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
+        }
+
+        .full-width-header .btn-modern:hover {
+            background: rgba(255, 255, 255, 0.16);
+            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.26);
         }
 
         .header-inner {
-            max-width: 1000px;
+            width: 80%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 clamp(16px, 4vw, 60px);
+            box-sizing: border-box;
         }
 
 
@@ -40,12 +105,29 @@
             font-weight: 700;
             text-align: center;
             margin-bottom: 15px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
         }
 
         h2 {
             font-size: 28px;
-            margin-top: 40px;
+            margin: 0 0 16px 0;
             font-weight: 600;
+            letter-spacing: -0.01em;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 84px;
+            height: 3px;
+            border-radius: 99px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%);
+            opacity: 0.9;
         }
 
 
@@ -53,18 +135,19 @@
         .authors {
             text-align: center;
             font-size: 18px;
+            font-weight: 500;
         }
 
         .affils {
             text-align: center;
             font-size: 15px;
-            color: #555;
+            color: var(--muted);
         }
 
         .equal {
             text-align: center;
             font-size: 14px;
-            color: #777;
+            color: var(--muted);
             margin-top: 5px;
         }
 
@@ -80,12 +163,13 @@
             margin: 10px;
             font-size: 17px;
             font-weight: 500;
-            color: #111;
-            background: rgba(255, 255, 255, 0.85);
+            color: var(--text);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.78) 100%);
             border-radius: 14px;
             text-decoration: none;
             backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+            border: 1px solid rgba(15, 23, 42, 0.08);
             transition: all 0.25s ease;
         }
 
@@ -97,16 +181,17 @@
 
 
         .teaser img {
-            width: 90%;
+            width: 100%;
             border-radius: 12px;
             display: block;
             margin: 20px auto;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
         }
 
 
         video {
             border-radius: 10px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 14px 34px rgba(15, 23, 42, 0.14);
         }
 
 
@@ -114,28 +199,40 @@
             text-align: justify;
             font-size: 17px;
             line-height: 1.7;
-            margin-top: 15px;
+            margin: 0;
         }
 
         .manual-edit-container {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 10px;
+        }
+
+        .manual-edit-container p.abstract {
+            margin: 28px 0 34px 0;
+        }
+
+        .manual-edit-container>.center {
+            margin-top: 18px;
+            margin-bottom: 34px;
         }
 
         .edit-pair {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: stretch;
             gap: 40px;
             margin-bottom: 20px;
         }
 
         .edit-pair img {
-            height: 420px;
-            width: auto;
+            width: calc(50% - 20px);
+            height: auto;
+            max-height: 70vh;
             object-fit: contain;
             background: #f7f7f7;
             border-radius: 10px;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 14px 34px rgba(15, 23, 42, 0.14);
+            border: 1px solid rgba(15, 23, 42, 0.08);
         }
 
         .thumbnail-bar {
@@ -153,6 +250,8 @@
             border-radius: 8px;
             cursor: pointer;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(15, 23, 42, 0.10);
+            background: rgba(255, 255, 255, 0.8);
             transition: transform .2s, box-shadow .2s;
         }
 
@@ -162,15 +261,20 @@
         }
 
         .thumbnail-bar img.active-thumb {
-            outline: 3px solid #4aa3ff;
+            outline: 3px solid var(--accent);
             transform: scale(1.05);
         }
 
         .multi-carousel {
             position: relative;
-            max-width: 1000px;
-            margin: 40px auto;
+            width: 100%;
+            max-width: none;
+            margin: 40px 0;
             overflow: hidden;
+        }
+
+        .manual-edit-container .multi-carousel {
+            margin-top: 34px;
         }
 
         .multi-track {
@@ -186,24 +290,27 @@
         .multi-slide video {
             width: 100%;
             border-radius: 12px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            box-shadow: 0 14px 34px rgba(15, 23, 42, 0.14);
+            border: 1px solid rgba(15, 23, 42, 0.08);
             height: 260px;
             object-fit: contain;
         }
 
-        
+
         .multi-btn {
             position: absolute;
             top: 50%;
             z-index: 2;
             transform: translateY(-50%);
-            background: rgba(255,255,255,0.9);
+            background: rgba(255, 255, 255, 0.92);
             border: none;
             padding: 8px 14px;
             font-size: 22px;
             border-radius: 8px;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 14px 28px rgba(15, 23, 42, 0.16);
+            border: 1px solid rgba(15, 23, 42, 0.10);
+            backdrop-filter: blur(10px);
         }
 
         .multi-btn:hover {
@@ -213,15 +320,17 @@
         #multiPrev {
             left: 10px;
         }
+
         #multiNext {
             right: 10px;
         }
 
-        
+
         .multi-dots {
             text-align: center;
             margin-top: 15px;
         }
+
         .multi-dots span {
             display: inline-block;
             width: 10px;
@@ -233,7 +342,7 @@
         }
 
         .multi-dots .active {
-            background: #444;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%);
         }
     </style>
 
@@ -281,137 +390,84 @@
 
 
 
-    <div class="content">
-
-
-        <div class="teaser">
-            <img src="images/teaser.png">
-        </div>
-
-        <h2>Abstract</h2>
-        <div class="abstract">
-            Implicit Neural Representations (INRs) have become an essential tool for modeling continuous 2D images,
-            enabling high-fidelity reconstruction, super-resolution, and compression. Popular architectures such as
-            SIREN, WIRE,
-            and FINER demonstrate the potential of INR for capturing fine-grained image details. However, traditional
-            INRs often
-            lack explicit geometric structure and have limited capabilities for local editing or integration with
-            physical simulation,
-            restricting their applicability in dynamic or interactive settings. To address these limitations, we propose
-            GaINeR:
-            Geometry-Aware Implicit Network Representation, a novel framework for 2D images that combines trainable
-            Gaussian
-            distributions with a neural network-based INR. For a given image coordinate, the model retrieves the K
-            nearest
-            Gaussians, aggregates distance-weighted embeddings, and predicts the RGB value via a neural network. This
-            design
-            enables continuous image representation, interpretable geometric structure, and flexible local editing,
-            providing a
-            foundation for physically aware and interactive image manipulation.
-        </div>
-
-
-        <h2>Video</h2>
-        <div class="center">
-            <video width="100%" controls>
-                <source src="images/GaINeR.mp4" type="video/mp4">
-            </video>
-        </div>
-
-
-        <h2>Results</h2>
-
-        <div class="manual-edit-container">
-
-            <div class="edit-pair">
-                <img id="before-image" src="images/edit_images/edit1_before.png">
-                <img id="after-image" src="images/edit_images/edit1_after.png">
+    <main>
+        <section class="band band--alt">
+            <div class="content">
+                <div class="teaser">
+                    <img src="images/Teaser.jpg">
+                </div>
             </div>
-            <div class="thumbnail-bar" id="thumb-bar"></div>
+        </section>
 
-            <p class="abstract">
-                GaINeR enables intuitive and flexible image manipulation.
-                Manual edits become simple and precise: adjusting the learned Gaussian field directly reshapes the
-                image, producing smooth, artifact-free deformations that naturally preserve structure and appearance.
-                The same formulation seamlessly supports physics-based effects — forces, collisions, or fluid-like
-                motion
-                gently modify the Gaussian geometry, yielding stable, coherent dynamics without tearing or retraining.
-                Together, these capabilities allow GaINeR to handle both local edits and complex physics-driven
-                transformations
-                while maintaining high visual fidelity.
-            </p>
+        <section class="band">
+            <div class="content">
+                <h2>Abstract</h2>
+                <div class="abstract">
+                    Implicit Neural Representations (INRs) are widely used for modeling continuous 2D images, enabling
+                    high-fidelity reconstruction, super-resolution, and compression. Architectures such as SIREN, WIRE, and
+                    FINER demonstrate their ability to capture fine image details. However, conventional INRs lack explicit
+                    geometric structure, limiting local editing, and integration with physical simulation. To address these
+                    limitations, we propose GaINeR (Geometry-Aware Implicit Network Representation), a novel framework for 2D images that combines trainable
+                    Gaussian distributions with a neural network-based INR. For a given image coordinate, the model retrieves
+                    the K nearest Gaussians, aggregates distance-weighted embeddings, and predicts the RGB value via a neural
+                    network. This design enables continuous image representation, interpretable geometric structure, and
+                    flexible local editing, providing a foundation for physically aware and interactive image manipulation. Our
+                    method supports geometry-consistent transformations, seamless super-resolution, and integration with
+                    physics-based simulations. Moreover, the Gaussian representation allows lifting a single 2D image into a
+                    geometry-aware 3D representation, enabling depth-guided editing. Experiments demonstrate that GaINeR
+                    achieves state-of-the-art reconstruction quality while maintaining flexible and physically consistent image
+                    editing.
+                </div>
+            </div>
+        </section>
 
-<div class="multi-carousel">
-    <button id="multiPrev" class="multi-btn">◀</button>
+        <section class="band band--alt">
+            <div class="content">
+                <h2>Video</h2>
+                <div class="center">
+                    <video width="100%" controls>
+                        <source src="images/GaINeR_Method_Overview.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </section>
 
-    <div class="multi-track">
+        <section class="band">
+            <div class="content">
+                <h2>Results</h2>
 
-        <div class="multi-slide">
-            <video muted loop autoplay playsinline>
-                <source src="images/videos/caterpillar.mp4" type="video/mp4">
-            </video>
-        </div>
+                <div class="manual-edit-container">
 
-        <div class="multi-slide">
-            <video muted loop autoplay playsinline>
-                <source src="images/videos/gainer_water_drop.mp4" type="video/mp4">
-            </video>
-        </div>
+                    <div class="edit-pair">
+                        <img id="before-image" src="images/edit_images/edit1_before.png">
+                        <img id="after-image" src="images/edit_images/edit1_after.png">
+                    </div>
+                    <div class="thumbnail-bar" id="thumb-bar"></div>
 
-        <div class="multi-slide">
-            <video muted loop autoplay playsinline>
-                <source src="images/videos/apple_bounce.mp4" type="video/mp4">
-            </video>
-        </div>
+                    <p class="abstract">
+                        GaINeR enables intuitive and flexible image manipulation.
+                        Manual edits become simple and precise: adjusting the learned Gaussian field directly reshapes the
+                        image, producing smooth, artifact-free deformations that naturally preserve structure and appearance.
+                        The same formulation seamlessly supports physics-based effects — forces, collisions, or fluid-like
+                        motion
+                        gently modify the Gaussian geometry, yielding stable, coherent dynamics without tearing or retraining.
+                        Together, these capabilities allow GaINeR to handle both local edits and complex physics-driven
+                        transformations
+                        while maintaining high visual fidelity.
+                    </p>
 
-        <div class="multi-slide">
-            <video muted loop autoplay playsinline>
-                <source src="images/videos/bouquet.mp4" type="video/mp4">
-            </video>
-        </div>
+                    <div class="center">
+                        <video width="100%" controls muted loop autoplay>
+                            <source src="images/Results.mp4"   type="video/mp4">
+                        </video>
+                    </div>
 
-        <div class="multi-slide">
-            <video muted loop autoplay playsinline>
-                <source src="images/videos/matador.mp4" type="video/mp4">
-            </video>
-        </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        <div class="multi-slide">
-            <video muted loop autoplay playsinline>
-                <source src="images/videos/jelly.mp4" type="video/mp4">
-            </video>
-        </div>
-
-        <div class="multi-slide">
-            <video muted loop autoplay playsinline>
-                <source src="images/videos/apple_sand.mp4" type="video/mp4">
-            </video>
-        </div>
-
-
-
-    </div>
-
-    <button id="multiNext" class="multi-btn">▶</button>
-</div>
-
-<div class="multi-dots" id="multiDots"></div>
-
-
-
-
-
-        </div>
-
-
-
-    </div>
-
-</body>
-
-</html>
-
-<script>
+    <script>
     document.addEventListener("DOMContentLoaded", function () {
 
         const N = 25;
@@ -441,48 +497,52 @@
         });
     });
 
- const track2 = document.querySelector('.multi-track');
-const slides2 = document.querySelectorAll('.multi-slide');
-const prev2 = document.getElementById('multiPrev');
-const next2 = document.getElementById('multiNext');
-const dots2 = document.getElementById('multiDots');
+    const track2 = document.querySelector('.multi-track');
+    const slides2 = document.querySelectorAll('.multi-slide');
+    const prev2 = document.getElementById('multiPrev');
+    const next2 = document.getElementById('multiNext');
+    const dots2 = document.getElementById('multiDots');
 
-const itemsPerView = 3;
-const totalSlides = slides2.length;
-const totalPages = Math.ceil(totalSlides / itemsPerView);
+    const itemsPerView = 3;
+    const totalSlides = slides2.length;
+    const totalPages = Math.ceil(totalSlides / itemsPerView);
 
-let page = 0;
-
-
-for (let i = 0; i < totalPages; i++) {
-    const dot = document.createElement("span");
-    if (i === 0) dot.classList.add("active");
-    dot.dataset.index = i;
-    dots2.appendChild(dot);
-}
-
-function updateCarousel2() {
-    track2.style.transform = `translateX(-${page * 100}%)`;
-
-    dots2.querySelectorAll("span").forEach(d => d.classList.remove("active"));
-    dots2.querySelector(`span[data-index="${page}"]`).classList.add("active");
-}
-
-next2.onclick = () => {
-    page = (page + 1) % totalPages;
-    updateCarousel2();
-};
-
-prev2.onclick = () => {
-    page = (page - 1 + totalPages) % totalPages;
-    updateCarousel2();
-};
+    let page = 0;
 
 
-dots2.querySelectorAll("span").forEach(dot => {
-    dot.onclick = () => {
-        page = parseInt(dot.dataset.index);
+    for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement("span");
+        if (i === 0) dot.classList.add("active");
+        dot.dataset.index = i;
+        dots2.appendChild(dot);
+    }
+
+    function updateCarousel2() {
+        track2.style.transform = `translateX(-${page * 100}%)`;
+
+        dots2.querySelectorAll("span").forEach(d => d.classList.remove("active"));
+        dots2.querySelector(`span[data-index="${page}"]`).classList.add("active");
+    }
+
+    next2.onclick = () => {
+        page = (page + 1) % totalPages;
         updateCarousel2();
     };
-});
-</script>
+
+    prev2.onclick = () => {
+        page = (page - 1 + totalPages) % totalPages;
+        updateCarousel2();
+    };
+
+
+    dots2.querySelectorAll("span").forEach(dot => {
+        dot.onclick = () => {
+            page = parseInt(dot.dataset.index);
+            updateCarousel2();
+        };
+    });
+    </script>
+
+</body>
+
+</html>
