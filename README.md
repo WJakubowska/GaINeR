@@ -20,14 +20,7 @@ This repository contains the official implementation assosciated with the paper 
 **Project Page:** https://wjakubowska.github.io/GaINeR/
 
 
-**Abstract:** Implicit Neural Representations (INRs) have become an essential tool for modeling continuous 2D images, enabling high-fidelity
-reconstruction, super-resolution, and compression. Popular architectures such as SIREN, WIRE, and FINER demonstrate the potential
-of INR for capturing fine-grained image details. However, traditional INRs often lack explicit geometric structure and have limited
-capabilities for local editing or integration with physical simulation, restricting their applicability in dynamic or interactive settings.
-To address these limitations, we propose GaINeR (Geometry-Aware Implicit Neural Representation for Image Editing), a novel framework for 2D images that combines trainable Gaussian distributions
-with a neural network-based INR. For a given image coordinate, the model retrieves the K nearest Gaussians, aggregates distance-weighted embeddings,
-and predicts the RGB value via a neural network. This design enables continuous image representation, interpretable geometric structure, and flexible local editing,
-providing a foundation for physically aware and interactive image manipulation.
+**Abstract:** Implicit Neural Representations (INRs) are widely used for modeling continuous 2D images, enabling high-fidelity reconstruction, super-resolution, and compression. Architectures such as SIREN, WIRE, and FINER demonstrate their ability to capture fine image details. However, conventional INRs lack explicit geometric structure, limiting local editing, and integration with physical simulation. To address these limitations, we propose GaINeR (Geometry-Aware Implicit Neural Representation for Image Editing), a novel framework for 2D images that combines trainable Gaussian distributions with a neural network-based INR. For a given image coordinate, the model retrieves the K nearest Gaussians, aggregates distance-weighted embeddings, and predicts the RGB value via a neural network. This design enables continuous image representation, interpretable geometric structure, and flexible local editing, providing a foundation for physically aware and interactive image manipulation. Our method supports geometry-consistent transformations, seamless super-resolution, and integration with physics-based simulations. Moreover, the Gaussian representation allows lifting a single 2D image into a geometry-aware 3D representation, enabling depth-guided editing. Experiments demonstrate that GaINeR achieves state-of-the-art reconstruction quality while maintaining flexible and physically consistent image editing.
 
 Feel free to check out this code if you just want to modify 2d images with ease!
 
