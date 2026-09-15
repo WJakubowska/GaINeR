@@ -37,10 +37,14 @@
         }
 
         .band--alt {
-            background: linear-gradient(180deg, rgba(15, 23, 42, 0.06) 0%, rgba(51, 65, 85, 0.03) 100%);
+            background: linear-gradient(
+                180deg,
+                rgba(15, 23, 42, 0.06) 0%,
+                rgba(51, 65, 85, 0.03) 100%
+            );
         }
 
-        .band+.band {
+        .band + .band {
             border-top: 1px solid rgba(15, 23, 42, 0.06);
         }
 
@@ -56,12 +60,20 @@
             box-shadow: var(--shadow);
         }
 
-
         .full-width-header {
             width: 100%;
             background:
-                radial-gradient(900px circle at 18% 12%, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0) 60%),
-                linear-gradient(135deg, #0b1220 0%, #0f172a 40%, #334155 100%);
+                radial-gradient(
+                    900px circle at 18% 12%,
+                    rgba(255, 255, 255, 0.10),
+                    rgba(255, 255, 255, 0) 60%
+                ),
+                linear-gradient(
+                    135deg,
+                    #0b1220 0%,
+                    #0f172a 40%,
+                    #334155 100%
+                );
             padding: 40px 0 30px 0;
             box-shadow: 0px 6px 22px rgba(0, 0, 0, 0.10);
             border-bottom: 1px solid rgba(17, 17, 17, 0.08);
@@ -99,7 +111,6 @@
             box-sizing: border-box;
         }
 
-
         h1 {
             font-size: 40px;
             font-weight: 700;
@@ -126,11 +137,13 @@
             width: 84px;
             height: 3px;
             border-radius: 99px;
-            background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%);
+            background: linear-gradient(
+                90deg,
+                var(--accent) 0%,
+                var(--accent2) 100%
+            );
             opacity: 0.9;
         }
-
-
 
         .authors {
             text-align: center;
@@ -144,17 +157,6 @@
             color: var(--muted);
         }
 
-        .venue-badge {
-          display: inline-block;
-          margin: 24px 0;
-          padding: 8px 18px;
-          border: 1px solid rgba(255,255,255,0.25);
-          border-radius: 999px;
-          background: rgba(255,255,255,0.08);
-          font-weight: 600;
-          font-size: 1rem;
-        }
-
         .equal {
             text-align: center;
             font-size: 14px;
@@ -162,7 +164,15 @@
             margin-top: 5px;
         }
 
-
+        .venue {
+            text-align: center;
+            margin-top: 16px;
+            margin-bottom: 6px;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+        }
 
         .center {
             text-align: center;
@@ -175,7 +185,11 @@
             font-size: 17px;
             font-weight: 500;
             color: var(--text);
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.78) 100%);
+            background: linear-gradient(
+                180deg,
+                rgba(255, 255, 255, 0.92) 0%,
+                rgba(255, 255, 255, 0.78) 100%
+            );
             border-radius: 14px;
             text-decoration: none;
             backdrop-filter: blur(10px);
@@ -190,7 +204,6 @@
             background: white;
         }
 
-
         .teaser img {
             width: 100%;
             border-radius: 12px;
@@ -199,12 +212,10 @@
             box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
         }
 
-
         video {
             border-radius: 10px;
             box-shadow: 0 14px 34px rgba(15, 23, 42, 0.14);
         }
-
 
         .abstract {
             text-align: justify;
@@ -222,7 +233,7 @@
             margin: 28px 0 34px 0;
         }
 
-        .manual-edit-container>.center {
+        .manual-edit-container > .center {
             margin-top: 18px;
             margin-bottom: 34px;
         }
@@ -307,7 +318,6 @@
             object-fit: contain;
         }
 
-
         .multi-btn {
             position: absolute;
             top: 50%;
@@ -335,7 +345,6 @@
         #multiNext {
             right: 10px;
         }
-        
 
         .multi-dots {
             text-align: center;
@@ -353,16 +362,16 @@
         }
 
         .multi-dots .active {
-            background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%);
+            background: linear-gradient(
+                90deg,
+                var(--accent) 0%,
+                var(--accent2) 100%
+            );
         }
     </style>
-
-
 </head>
 
-
 <body>
-
 
     <div class="full-width-header">
         <div class="header-inner">
@@ -390,23 +399,33 @@
                 <sup>*</sup>Equal contribution
             </div>
 
-
-            <div class="venue-badge">
-              ECCV 2026
+            <div class="venue">
+                Accepted to ECCV 2026
             </div>
 
-            <div class="center" style="margin-top: 25px;">
-                <a class="btn-modern" href="https://arxiv.org/pdf/2511.20924" target="_blank">arXiv</a>
-                <a class="btn-modern" href="https://github.com/WJakubowska/GaINeR" target="_blank">Code</a>
+            <div class="center" style="margin-top: 10px;">
+                <a
+                    class="btn-modern"
+                    href="https://arxiv.org/pdf/2511.20924"
+                    target="_blank"
+                >
+                    arXiv
+                </a>
+
+                <a
+                    class="btn-modern"
+                    href="https://github.com/WJakubowska/GaINeR"
+                    target="_blank"
+                >
+                    Code
+                </a>
             </div>
 
         </div>
     </div>
 
-
-
-
     <main>
+
         <section class="band band--alt">
             <div class="content">
                 <div class="teaser">
@@ -417,146 +436,202 @@
 
         <section class="band">
             <div class="content">
+
                 <h2>Abstract</h2>
+
                 <div class="abstract">
-                    Implicit Neural Representations (INRs) are widely used for modeling continuous 2D images, enabling
-                    high-fidelity reconstruction, super-resolution, and compression. Architectures such as SIREN, WIRE, and
-                    FINER demonstrate their ability to capture fine image details. However, conventional INRs lack explicit
-                    geometric structure, limiting local editing, and integration with physical simulation. To address these
-                    limitations, we propose GaINeR (Geometry-Aware Implicit Network Representation), a novel framework for 2D images that combines trainable
-                    Gaussian distributions with a neural network-based INR. For a given image coordinate, the model retrieves
-                    the K nearest Gaussians, aggregates distance-weighted embeddings, and predicts the RGB value via a neural
-                    network. This design enables continuous image representation, interpretable geometric structure, and
-                    flexible local editing, providing a foundation for physically aware and interactive image manipulation. Our
-                    method supports geometry-consistent transformations, seamless super-resolution, and integration with
-                    physics-based simulations. Moreover, the Gaussian representation allows lifting a single 2D image into a
-                    geometry-aware 3D representation, enabling depth-guided editing. Experiments demonstrate that GaINeR
-                    achieves state-of-the-art reconstruction quality while maintaining flexible and physically consistent image
-                    editing.
+                    Implicit Neural Representations (INRs) are widely used for modeling continuous 2D images,
+                    enabling high-fidelity reconstruction, super-resolution, and compression. Architectures such
+                    as SIREN, WIRE, and FINER demonstrate their ability to capture fine image details. However,
+                    conventional INRs lack explicit geometric structure, limiting local editing, and integration
+                    with physical simulation. To address these limitations, we propose GaINeR
+                    (Geometry-Aware Implicit Network Representation), a novel framework for 2D images that
+                    combines trainable Gaussian distributions with a neural network-based INR. For a given image
+                    coordinate, the model retrieves the K nearest Gaussians, aggregates distance-weighted
+                    embeddings, and predicts the RGB value via a neural network. This design enables continuous
+                    image representation, interpretable geometric structure, and flexible local editing,
+                    providing a foundation for physically aware and interactive image manipulation. Our method
+                    supports geometry-consistent transformations, seamless super-resolution, and integration
+                    with physics-based simulations. Moreover, the Gaussian representation allows lifting a
+                    single 2D image into a geometry-aware 3D representation, enabling depth-guided editing.
+                    Experiments demonstrate that GaINeR achieves state-of-the-art reconstruction quality while
+                    maintaining flexible and physically consistent image editing.
                 </div>
+
             </div>
         </section>
 
         <section class="band band--alt">
             <div class="content">
+
                 <h2>Video</h2>
+
                 <div class="center">
                     <video width="100%" controls>
-                        <source src="images/GaINeR_Method_Overview.mp4" type="video/mp4">
+                        <source
+                            src="images/GaINeR_Method_Overview.mp4"
+                            type="video/mp4"
+                        >
                     </video>
                 </div>
+
             </div>
         </section>
 
         <section class="band">
             <div class="content">
+
                 <h2>Results</h2>
 
                 <div class="manual-edit-container">
 
                     <div class="edit-pair">
-                        <img id="before-image" src="images/edit_images/edit1_before.png">
-                        <img id="after-image" src="images/edit_images/edit1_after.png">
+                        <img
+                            id="before-image"
+                            src="images/edit_images/edit1_before.png"
+                        >
+
+                        <img
+                            id="after-image"
+                            src="images/edit_images/edit1_after.png"
+                        >
                     </div>
-                    <div class="thumbnail-bar" id="thumb-bar"></div>
+
+                    <div
+                        class="thumbnail-bar"
+                        id="thumb-bar"
+                    ></div>
 
                     <p class="abstract">
                         GaINeR enables intuitive and flexible image manipulation.
-                        Manual edits become simple and precise: adjusting the learned Gaussian field directly reshapes the
-                        image, producing smooth, artifact-free deformations that naturally preserve structure and appearance.
-                        The same formulation seamlessly supports physics-based effects — forces, collisions, or fluid-like
-                        motion
-                        gently modify the Gaussian geometry, yielding stable, coherent dynamics without tearing or retraining.
-                        Together, these capabilities allow GaINeR to handle both local edits and complex physics-driven
-                        transformations
-                        while maintaining high visual fidelity.
+                        Manual edits become simple and precise: adjusting the learned Gaussian field directly
+                        reshapes the image, producing smooth, artifact-free deformations that naturally preserve
+                        structure and appearance. The same formulation seamlessly supports physics-based effects
+                        — forces, collisions, or fluid-like motion gently modify the Gaussian geometry, yielding
+                        stable, coherent dynamics without tearing or retraining. Together, these capabilities
+                        allow GaINeR to handle both local edits and complex physics-driven transformations while
+                        maintaining high visual fidelity.
                     </p>
 
                     <div class="center">
-                        <video width="100%" controls muted loop autoplay>
-                            <source src="images/Results.mp4"   type="video/mp4">
+                        <video
+                            width="100%"
+                            controls
+                            muted
+                            loop
+                            autoplay
+                        >
+                            <source
+                                src="images/Results.mp4"
+                                type="video/mp4"
+                            >
                         </video>
                     </div>
 
                 </div>
+
             </div>
         </section>
+
     </main>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function () {
 
-        const N = 25;
+            const N = 25;
 
-        let container = document.getElementById("thumb-bar");
+            let container = document.getElementById("thumb-bar");
 
-        for (let i = 1; i <= N; i++) {
-            if (i != 13) {
-                let img = document.createElement("img");
-                img.className = "thumb";
-                if (i === 1) img.classList.add("active-thumb");
-                img.dataset.pair = i;
-                img.src = `images/edit_images/thumbs/edit${i}.png`;
-                container.appendChild(img);
+            for (let i = 1; i <= N; i++) {
+                if (i != 13) {
+                    let img = document.createElement("img");
+
+                    img.className = "thumb";
+
+                    if (i === 1) {
+                        img.classList.add("active-thumb");
+                    }
+
+                    img.dataset.pair = i;
+                    img.src = `images/edit_images/thumbs/edit${i}.png`;
+
+                    container.appendChild(img);
+                }
             }
+
+            document.querySelectorAll(".thumb").forEach(thumb => {
+                thumb.addEventListener("click", () => {
+
+                    document
+                        .querySelectorAll(".thumb")
+                        .forEach(t => t.classList.remove("active-thumb"));
+
+                    thumb.classList.add("active-thumb");
+
+                    let id = thumb.dataset.pair;
+
+                    document.getElementById("before-image").src =
+                        `images/edit_images/edit${id}_before.png`;
+
+                    document.getElementById("after-image").src =
+                        `images/edit_images/edit${id}_after.png`;
+                });
+            });
+
+        });
+
+        const track2 = document.querySelector('.multi-track');
+        const slides2 = document.querySelectorAll('.multi-slide');
+        const prev2 = document.getElementById('multiPrev');
+        const next2 = document.getElementById('multiNext');
+        const dots2 = document.getElementById('multiDots');
+
+        const itemsPerView = 3;
+        const totalSlides = slides2.length;
+        const totalPages = Math.ceil(totalSlides / itemsPerView);
+
+        let page = 0;
+
+        for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement("span");
+
+            if (i === 0) {
+                dot.classList.add("active");
+            }
+
+            dot.dataset.index = i;
+
+            dots2.appendChild(dot);
         }
 
-        document.querySelectorAll(".thumb").forEach(thumb => {
-            thumb.addEventListener("click", () => {
-                document.querySelectorAll(".thumb").forEach(t => t.classList.remove("active-thumb"));
-                thumb.classList.add("active-thumb");
+        function updateCarousel2() {
+            track2.style.transform = `translateX(-${page * 100}%)`;
 
-                let id = thumb.dataset.pair;
-                document.getElementById("before-image").src = `images/edit_images/edit${id}_before.png`;
-                document.getElementById("after-image").src = `images/edit_images/edit${id}_after.png`;
-            });
-        });
-    });
+            dots2
+                .querySelectorAll("span")
+                .forEach(d => d.classList.remove("active"));
 
-    const track2 = document.querySelector('.multi-track');
-    const slides2 = document.querySelectorAll('.multi-slide');
-    const prev2 = document.getElementById('multiPrev');
-    const next2 = document.getElementById('multiNext');
-    const dots2 = document.getElementById('multiDots');
+            dots2
+                .querySelector(`span[data-index="${page}"]`)
+                .classList.add("active");
+        }
 
-    const itemsPerView = 3;
-    const totalSlides = slides2.length;
-    const totalPages = Math.ceil(totalSlides / itemsPerView);
-
-    let page = 0;
-
-
-    for (let i = 0; i < totalPages; i++) {
-        const dot = document.createElement("span");
-        if (i === 0) dot.classList.add("active");
-        dot.dataset.index = i;
-        dots2.appendChild(dot);
-    }
-
-    function updateCarousel2() {
-        track2.style.transform = `translateX(-${page * 100}%)`;
-
-        dots2.querySelectorAll("span").forEach(d => d.classList.remove("active"));
-        dots2.querySelector(`span[data-index="${page}"]`).classList.add("active");
-    }
-
-    next2.onclick = () => {
-        page = (page + 1) % totalPages;
-        updateCarousel2();
-    };
-
-    prev2.onclick = () => {
-        page = (page - 1 + totalPages) % totalPages;
-        updateCarousel2();
-    };
-
-
-    dots2.querySelectorAll("span").forEach(dot => {
-        dot.onclick = () => {
-            page = parseInt(dot.dataset.index);
+        next2.onclick = () => {
+            page = (page + 1) % totalPages;
             updateCarousel2();
         };
-    });
+
+        prev2.onclick = () => {
+            page = (page - 1 + totalPages) % totalPages;
+            updateCarousel2();
+        };
+
+        dots2.querySelectorAll("span").forEach(dot => {
+            dot.onclick = () => {
+                page = parseInt(dot.dataset.index);
+                updateCarousel2();
+            };
+        });
     </script>
 
 </body>
