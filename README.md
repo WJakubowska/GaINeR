@@ -4,7 +4,13 @@
 <h1>GaINeR: Geometry-Aware Implicit Neural Representation for Image Editing</h1>
 Weronika Jakubowska, Mikołaj Zieliński, Rafał Tobiasz, Krzysztof Byrski, Maciej Zięba, Dominik Belter, Przemysław Spurek
 <br> <br>
-  
+
+<br>
+
+🎉 Accepted to ECCV 2026
+
+<br>
+
 [![Project Page](https://img.shields.io/badge/Project_Page-Visit-green)](https://wjakubowska.github.io/GaINeR/)
 [![arXiv](https://img.shields.io/badge/arXiv-2411.18311-red)](https://arxiv.org/pdf/2511.20924)
 </div>
